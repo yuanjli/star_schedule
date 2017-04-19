@@ -1,26 +1,17 @@
-<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>jQuery UI Datepicker - Default functionality</title>
+  <title>Star Schedule</title>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
-  
-
-
   $(function() {
     $( "#start_date" ).datepicker({dateFormat: "yy-mm-dd"});
     $("#end_date").datepicker({dateFormat: "yy-mm-dd"});
   });
-
-
-
-var date1=start_date;
-var date2=end_date;
   </script>
 </head>
 <body>
@@ -43,9 +34,25 @@ var date2=end_date;
       <input type="text" id="end_date" name="end_date" required></li>
 
       <!-- default checkbox value is 0 and is stored hidden-->
-      <input type="hidden" id="default_want_driver" name="want_driver" value="0"> 
+      <input type="hidden" id="default_want_driver" name="want_driver" value="0" > 
       <input type="checkbox" id="want_driver" name="want_driver" value="1"> I need a driver <br>
-      <input type="submit" id="submit_button" value="Submit">
+
+      <!-- Driver Dropdown list -->
+      <select id="driver_id" name="driver_id">
+          <option value="1">Tom Riddle</option>
+          <option value="2">Ana Steele</option>
+          <option value="3">Tyson Gay</option>
+          <option value="4">George Clooney</option>
+          <option value="5">Mario Puzo</option>
+          <option value="6">John Smith</option>
+          <option value="7">Kelly Mathews</option>
+          <option value="8">Michael Crichton</option>
+          <option value="9">Tom Hiddleston</option>
+          <option value="10">Marilyn Monroe</option>
+     </select>
+
+
+      <input type="submit" id="submit_button" name="Submit" value="Submit">
   </ul>
 </form><br>
 
@@ -62,110 +69,70 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+
+$driver = 0;
+$car_avail = 0;
+
+
+//Check if the car is available on the select date 
+if(!empty($_POST['Submit'])){
+
 $start_date = $_POST['start_date'];
 $end_date = $_POST['end_date'];
 $v_type = $_POST['v_type'];
 $want_driver = (int)$_POST['want_driver'];
 
 
-//caluclate the cost per day
-
-$date1 = explode("-",$start_date);
-$date2 = explode("-",$end_date);
-
-echo((int)$start_date[2]);
-$year = (int)$start_date[2] - (int)$end_date[2];
-//$month = (int)$start_date[1] - (int)$end_date[1];
-//$day = (int)$start_date[2] - (int)$
-
-echo($year);
-//customer need not a driver
-//  $trans1 = "SELECT v_id,pp_day,d_id FROM vehicles,drivers WHERE vehicles.vehicle_avail='1' AND vehicles.model_no='$v_type' AND drivers.driver_avail='1' LIMIT 1";
- 
-
- $execute = "SELECT * FROM transactions WHERE '$end_date' > start_date AND end_date > '$start_date'";
- $result = mysqli_query($conn,$execute);
- $num_exec = mysqli_num_rows($result);
+          $execute = "SELECT * FROM transactions WHERE '$end_date' > start_date AND end_date > '$start_date' AND v_type='$v_type' ";
+          $result = mysqli_query($conn,$execute);
+          $num_exec = mysqli_num_rows($result);
 
 
- echo("Execute value ".$num_exec);
+          if($num_exec >= 4) {
+              echo("\nSorry. No cars are available for these dates!!");
+          }
 
-if($num_exec>=4)
-  echo("\nSorry. No cars are available for these dates!!");
-else
-  echo("Car available");
+          else {
+              $car_avail = 1;
+              echo("Car Available check");
+          }
 
+//If customer needs driver check the availability of the driver
+          if($want_driver == 1) {
+            $driver = (int)$_POST['driver_id'];
+            echo("Want Driver is set"); 
+            $execute = "SELECT * FROM transactions WHERE '$end_date' > start_date AND end_date > '$start_date' AND d_id='$driver'";
+            $result = mysqli_query($conn,$execute);
+            $num_exec = mysqli_num_rows($result);
 
+            if($num_exec > 0) {
+                  echo("\nSorry. The Driver is not available for these days. Pick a different driver");
+            }
 
-/*$numdayssql = "SELECT date_diff('$end_date','$start_date')";
-$result  = mysqli_query($conn,$numdayssql);
+            else {
+                  $driver_avail = 1;
+            }
+          }
+}          
+//we have atleast one car in the time frame mentioned
+if($car_avail==1) {
+  
+  echo "Car available last loop";
+  // initailising session after checking if cust. needs driver or not
+    if (($want_driver == 1 and $driver_avail == 1) or $want_driver == 0){
 
-$row = mysqli_fetch_assoc($result);
-echo("Days are: " .$row);
-*/
-
-/*$result = mysql_query('SELECT date_diff('$end_date','$start_date')');
-echo mysql_result($result, 2); // outputs third employee's name
-
-*/
-    
-
-
-
-
-//check for vehicles with the same start date and end date
-/*  $trans1 = "SELECT t_id FROM transactions WHERE v_type='$v_type' AND start_date='$start_date' AND end_date='$end_date'";
-  $result = mysqli_query($conn,$trans1);   
-  $count = mysqli_num_rows($result);
-
-  echo("Vehicles with same start date and end date = ".$count);
-
-
-//checking vehicles with the same start date
-  $trans2 = "SELECT t_id FROM transactions WHERE v_type='$v_type' AND start_date='$start_date'";
-  $result2 = mysqli_query($conn,$trans2);
-  $count2 = mysqli_num_rows($result2);
-
-  echo("Vehicles with same start date = ".$count2);
-
-//checking vehicles with the same date
-  $trans3 = "SELECT t_id FROM transactions WHERE v_type='$v_type' AND end_date='$end_date'";
-  $result3 = mysqli_query($conn,$trans3);
-  $count3 = mysqli_num_rows($result3);
-
-  echo("Vehicles with same end date = ".$count3);
-
-*/
-/*  if($count == 1){
-    echo ("Generating your transcationpage");
-  }*/
-/*
-  else {
-    $trans2 = ""
-    $result = mysqli_query($conn,$trans2);
-    $count = mysqli_num_rows($result);
-
-    if($count == 1) {
-      echo ("Generating your transaction page");
+//          echo("Want Driver = ".$want_driver."Driver Avail = ".$driver_avail);
+          session_start();
+          $_SESSION['start_date'] = $start_date;
+          $_SESSION['end_date'] = $end_date;
+          $_SESSION['v_type'] = $v_type;
+          $_SESSION['d_id'] = $driver;
+          $_SESSION['trans'] = true;
+          header("location:./Scripts/trans.php");
     }
-  }
-*/
+}
+mysqli_close($conn);
+?> 
 
-
-//customer do not need a driver
-/*
-else {
- $trans1 = "SELECT v_id,pp_day,d_id FROM vehicles WHERE vehicles.vehicle_avail='1' AND vehicles.model_no='$v_type' limit 1;"
-
-}*/
-
-
-?>
-
-<!--<p>Date: <input type="text" id="startdate`"></p>
-<p>Date: <input type="text" id="enddate"></p>-->
-
- 
- 
 </body>
 </html>

@@ -1,5 +1,5 @@
 <?php
-//establishing conenction with the mysqlserver
+session_start();
 $servername = "localhost";
 $username = "root";
 $password = "root";
@@ -24,36 +24,45 @@ $pass = trim($_POST['passwd']);
 $pass = strip_tags($pass);
 $pass = htmlspecialchars($pass);
 
-//check if the email entered is empty  
-if(empty($email)){
+  
+/*if(empty($email)){
    $error = true;
    $emailError = "Please enter your email address.";
   } else if ( !filter_var($email,FILTER_VALIDATE_EMAIL) ) {
    $error = true;
    $emailError = "Please enter valid email address.";
-}
+}*/
 
- //if the password entered is empty 
+  
 if(empty($pass)){
    $error = true;
    $passError = "Please enter your password.";
 }
 
-//if there are no errors, establish the conenction to the database and retrive customer id
 if (!$error) {
    $sql = "SELECT c_id FROM UserTable WHERE email='$email' AND passwd='$pass'";
    $result = mysqli_query($conn,$sql);
    $count = mysqli_num_rows($result);
 
-//if there is a unique c_id that corresponds to the email & password crate a seesion for the user
+   $row = $result->fetch_assoc();
+   $_SESSION['c_id'] = $row["c_id"];
+
+
    if($count == 1) {
-    //still working on creating the php sessions
- //   $_SESSION['cid'] = $sql;
-    header("location:my_home.php");
+    $_SESSION['s_id'] = true;
+
+    //if redirected from the transcations page get the user back to the transactions page
+    if(isset($_SESSION['trans'])) {
+      header("location:./trans.php");
+    }
+   //else take the user to the index page i.e first time login 
+   else {
+    header("location:../index.php");
+    }
    }  
 
    else {echo "Invalid login Credentials";}
-   
+  
    }
 
  mysqli_close($conn);
