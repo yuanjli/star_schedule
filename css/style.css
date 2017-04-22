@@ -203,6 +203,7 @@ ul, ol {
 }
 .section-title.center {
 	padding: 30px 0;
+	color: #151010;
 }
 .section-title h2, .section-title.center h2 {
 	font-weight: 600;
@@ -228,11 +229,24 @@ ul, ol {
 	top: 2px;
 	background: rgba(178,153,153,0.4);
 }
+
+/*driver section*/
+#vehicle {
+	background: url(../img/services-bg.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+	color: #ddd;
+	padding: 120px 0;
+}
+
+
+
+
 /* About Section */
 #about {
 	
 	padding: 100px 0;
-	background: url(../img/services-bg.jpg);
+	background: url(../img/sky_beautiful.jpg);
 	background-size: cover;
 	background-attachment: fixed;
 	
@@ -249,6 +263,7 @@ ul, ol {
 #about .about-text {
 	margin-left: 10px;
 	margin-top: 90px;
+	color: #13130A;
 }
 #about H4 {
 	font-size: 20px;
