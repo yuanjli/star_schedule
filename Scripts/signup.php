@@ -28,13 +28,17 @@ $chk_email = "SELECT email FROM UserTable WHERE email='$email'";
 $result = mysqli_query($conn,$chk_email);
 $count = mysqli_num_rows($result);
 
+if ( !filter_var($email,FILTER_VALIDATE_EMAIL) ) {
+   echo("Please enter valid email address.");
+}
 
-if($count != 0){
+elseif($count != 0){
 	echo ("Already Registered E-mail. Please login");
 }
 
+else {
 $sql = "INSERT INTO UserTable (fname,lname,email,street,city,zip,phno,passwd) VALUES('$f_name','$l_name','$email','$street','$city','$zip','$phno','$passwd')";
-
+}
 
 if(mysqli_query($conn, $sql)){
     echo "We have Submitted your information successfully";

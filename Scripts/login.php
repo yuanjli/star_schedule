@@ -12,8 +12,6 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-
-
 //validating user email
 $email = trim($_POST['email']);
 $email = strip_tags($email);
@@ -25,13 +23,13 @@ $pass = strip_tags($pass);
 $pass = htmlspecialchars($pass);
 
   
-/*if(empty($email)){
+if(empty($email)){
    $error = true;
    $emailError = "Please enter your email address.";
   } else if ( !filter_var($email,FILTER_VALIDATE_EMAIL) ) {
    $error = true;
    $emailError = "Please enter valid email address.";
-}*/
+}
 
   
 if(empty($pass)){
