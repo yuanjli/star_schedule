@@ -1,3 +1,6 @@
+<body>
+<iframe src="../nav_bar.html"  width="1700" frameBorder="0"></iframe>
+</body>
 <?php
 session_start();
 /*
@@ -55,7 +58,7 @@ if(isset($_SESSION['s_id'])) {
 
 else {
 	echo ("You need to be logged in, to make transactions");
-	header("location:../html/login.html");
+//	header("location:../html/login.html");
 }
 
 mysqli_close($conn);

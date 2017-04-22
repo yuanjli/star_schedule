@@ -15,7 +15,7 @@
   </script>
 </head>
 <body>
-
+<iframe src="../nav_bar.html"  width="1700" frameBorder="0"></iframe>
 <form action="" method="post">
   <ul style="list-style:none;">
       
@@ -128,7 +128,7 @@ if($car_avail==1) {
           $_SESSION['v_type'] = $v_type;
           $_SESSION['d_id'] = $driver;
           $_SESSION['trans'] = true;
-          header("location:./Scripts/trans.php");
+          header("location:./trans.php");
     }
 }
 mysqli_close($conn);
