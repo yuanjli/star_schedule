@@ -22,10 +22,13 @@
      <li><label for="vehicle type" ></label>Vehicle Type<br>
      <select name="v_type" id="v_type">
         <option value="dlx_coach">Deluxe Coach</option>
-        <option value="dlx_mini">Deluxe Mini</option>
-        <option value="bus">Bus</option>
+        <option value="dlx_lux">Deluxe Luxuary</option>
+        <option value="mega_bus">Mega Bus</option>
         <option value="mini_bus">Mini Bus</option>
-        <option value="micro_bus">Micro Bus</option>
+        <option value="school_bus">School Bus</option>
+        <option value="party_bus">Party Bus</option>
+        <option value="sprinter">Sprinter</option>
+        <option value="ford_transit">Ford Transit</option>
       </select>
       
       <li><label for="start_date" >Start Date</label><br>
@@ -39,18 +42,19 @@
 
       <!-- Driver Dropdown list -->
       <select id="driver_id" name="driver_id">
-          <option value="1">Tom Riddle</option>
-          <option value="2">Ana Steele</option>
-          <option value="3">Tyson Gay</option>
-          <option value="4">George Clooney</option>
+          <option value="1">Jessica Wally</option>
+          <option value="2">Mike Sloan</option>
+          <option value="3">Michele Doe</option>
+          <option value="4">Linda Evans</option>
           <option value="5">Mario Puzo</option>
           <option value="6">John Smith</option>
           <option value="7">Kelly Mathews</option>
           <option value="8">Michael Crichton</option>
           <option value="9">Tom Hiddleston</option>
           <option value="10">Marilyn Monroe</option>
+          <option value="11">Leo Mathew</option>
+          <option value="12">John Deree</option>
      </select>
-
 
       <input type="submit" id="submit_button" name="Submit" value="Submit">
   </ul>
