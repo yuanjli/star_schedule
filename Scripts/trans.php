@@ -61,7 +61,7 @@ if(isset($_SESSION['s_id'])) {
 
 else {
 	echo ("You need to be logged in, to make transactions");
-//	header("location:../html/login.html");
+	header("location:../log_in.html");
 }
 
 mysqli_close($conn);
