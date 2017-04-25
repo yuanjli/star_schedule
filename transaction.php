@@ -62,29 +62,29 @@ $d_id = $_SESSION['d_id'];
 		<div class="content" id="address">
 			<form class="go-right">
 				<div>
-				<input type="name" name="first_name" id="first_name" placeholder="First Name" data-trigger="change" data-validation-minlength="1" data-type="name" data-required="true" data-error-message="Enter Your First Name"/><label for="first_name">First Name</label>
+				<input type="name" name="first_name" id="first_name" placeholder="First Name" data-trigger="change" data-validation-minlength="1" data-type="name" data-required="true" data-error-message="Enter Your First Name"/><label for="first_name" required>First Name</label>
         </div>
 				<div>
-				<input type="name" name="last_name" value="" id="last_name" placeholder="Last Name" data-trigger="change" data-validation-minlength="1" data-type="name" data-required="true" data-error-message="Enter Your Last Name"/><label for="last_name">Last Name</label>
+				<input type="name" name="last_name" value="" id="last_name" placeholder="Last Name" data-trigger="change" data-validation-minlength="1" data-type="name" data-required="true" data-error-message="Enter Your Last Name" required/><label for="last_name" >Last Name</label>
 				</div>
 				<div>
-				<input type="phone" name="telephone" value="" id="telephone" placeholder="Phone(555)-555-5555" data-trigger="change" data-validation-minlength="1" data-type="number" data-required="true" data-error-message="Enter Your Telephone Number"/><label for="telephone">Telephone</label>
+				<input type="phone" name="telephone" value="" id="telephone" placeholder="Phone(555)-555-5555" data-trigger="change" data-validation-minlength="1" data-type="number" data-required="true" data-error-message="Enter Your Telephone Number" required/><label for="telephone">Telephone</label>
 				</div>
 				<div>
-				<input type="text" name="company" value="" id="company" placeholder="Company" data-trigger="change" data-validation-minlength="1" data-type="name" data-required="false"/>
+				<input type="text" name="company" value="" id="company" placeholder="Company" data-trigger="change" data-validation-minlength="1" data-type="name" data-required="false" required/>
           <label for="Company">Company</label>
 				</div>
 				<div>
-				<input type="text" name="address"  id="address" placeholder="Address" data-trigger="change" data-validation-minlength="1" data-type="text" data-required="true" data-error-message="Enter Your Billing Address"/><label for="Address">Address</label>
+				<input type="text" name="address"  id="address" placeholder="Address" data-trigger="change" data-validation-minlength="1" data-type="text" data-required="true" data-error-message="Enter Your Billing Address"/><label for="Address" required>Address</label>
 				</div>
 				<div>
-				<input type="text" name="city" value="" id="city" placeholder="City" data-trigger="change" data-validation-minlength="1" data-type="text" data-required="true" data-error-message="Enter Your Billing City"/><label for="city">City</label>
+				<input type="text" name="city" value="" id="city" placeholder="City" data-trigger="change" data-validation-minlength="1" data-type="text" data-required="true" data-error-message="Enter Your Billing City"/><label for="city" reuiqred>City</label>
 				</div>
 				<div>
-				<input type="text" name="state" value="" id="state" placeholder="State" data-trigger="change" data-validation-minlength="1" data-type="text" data-required="true" data-error-message="Enter Your Billing State"/><label for="city">City</label>					
+				<input type="text" name="state" value="" id="state" placeholder="State" data-trigger="change" data-validation-minlength="1" data-type="text" data-required="true" data-error-message="Enter Your Billing State"/><label for="city" required>City</label>					
           		</div>
           		<div>
-				<input type="text" name="zip" value="" id="zip" placeholder="Zip" data-trigger="change" data-validation-minlength="1" data-type="text" data-required="true" data-error-message="Enter Your Billing State"/><label for="city">Zip</label>					
+				<input type="text" name="zip" value="" id="zip" placeholder="Zip" data-trigger="change" data-validation-minlength="1" data-type="text" data-required="true" data-error-message="Enter Your Billing State"/><label for="city" required>Zip</label>					
           		</div>
 				</div>
 			</form>
@@ -108,12 +108,12 @@ $d_id = $_SESSION['d_id'];
 			<div class="left">
 			<form class="go-right">
 				<div>
-				<input type="text" name="card_number" value="" id="card_number" placeholder="xxxx-xxxx-xxxx-xxxx" data-trigger="change" data-validation-minlength="1" data-type="name" data-required="true" data-error-message="Enter Your Credit Card Number"/><label for="card_number">Card Number</label>
+				<input type="text" name="card_number" value="" id="card_number" placeholder="xxxx-xxxx-xxxx-xxxx" data-trigger="change" data-validation-minlength="1" data-type="name" data-required="true" data-error-message="Enter Your Credit Card Number"/><label for="card_number" required>Card Number</label>
 				</div>
 				<div>
 				  <div class="expiry">	
 				      <div class="month_select">
-				        <select name="exp_month" value="" id="exp_month" placeholder="" data-trigger="change" data-type="name" data-required="true" data-error-message="Enter Your Credit Card Expiration Date">
+				        <select name="exp_month" value="" id="exp_month" placeholder="" data-trigger="change" data-type="name" data-required="true" data-error-message="Enter Your Credit Card Expiration Date" required>
 							<option value = "1">01 (Jan)</option>
                    			<option value = "2">02 (Feb)</option>
                    			<option value = "3">03 (Mar)</option>
@@ -129,7 +129,7 @@ $d_id = $_SESSION['d_id'];
                         </select>
                       </div>
                       <div class="year_select">
-				        <select name="exp_year" value="" id="exp_year" placeholder="" data-trigger="change" data-type="name" data-required="true" data-error-message="Enter Your Credit Card Expiration Date">
+				        <select name="exp_year" value="" id="exp_year" placeholder="" data-trigger="change" data-type="name" data-required="true" data-error-message="Enter Your Credit Card Expiration Date" required>
 							<option value = "1">2017 </option>
                    			<option value = "2">2018</option>
                    			
@@ -143,12 +143,12 @@ $d_id = $_SESSION['d_id'];
                    			<option value = "10">2026 </option>
                         </select>
             	      </div>
-                  <label class="exp_date" for="Exp_Date">Exp Date</label>
+                  <label class="exp_date" for="Exp_Date" required>Exp Date</label>
             	    </div>
             	  </div>
             	<div class="sec_num">
               <div>
-				        <input type="text" name="ccv" value="" id="ccv" placeholder="123" data-trigger="change" data-validation-minlength="3" data-type="name" data-required="true" data-error-message="Enter Your Card Security Code"/><label for="ccv">Security Code</label>
+				        <input type="text" name="ccv" value="" id="ccv" placeholder="123" data-trigger="change" data-validation-minlength="3" data-type="name" data-required="true" data-error-message="Enter Your Card Security Code" required/><label for="ccv">Security Code</label>
 				      </div>
 				      </div>
 			      </form>
