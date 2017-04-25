@@ -52,6 +52,9 @@ if(isset($_SESSION['s_id'])) {
     $total_amnt = $driver_cost + $vehicle_cost;
 
     echo("The Total Amount Payable is ".$total_amnt)."<br>"."<br>";
+    $_SESSION['driver_cost'] = $driver_cost;
+    $_SESSION['vehicle_cost'] = $vehicle_cost;
+    $_SESSION['total_amnt'] = $total_amnt;
     
     //make payment, if payment successful, enter the values to mysql
   }
@@ -63,3 +66,6 @@ else {
 
 mysqli_close($conn);
 ?>
+<body>
+<button><a href="../transaction.php" style="text-decoration:none;">Pay Now</a></button>
+</body>

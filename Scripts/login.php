@@ -55,7 +55,7 @@ if (!$error) {
     }
    //else take the user to the index page i.e first time login 
    else {
-    header("location:../index.php");
+    header("location:../index.html");
     }
    }  
 
