@@ -3,7 +3,7 @@
 	<title>Logged Out</title>
 </head>
 <body>
-	<iframe src="../nav_bar.html"  width="1700" frameBorder="0"></iframe>
+	<iframe src="../nav_bar.php"  width="1700" frameBorder="0"></iframe>
 <body>
 </html>
 
@@ -15,4 +15,6 @@ session_destroy();
 echo "You have been logged out";
 //header("location:../index.php");
 ?>
+
+
 
