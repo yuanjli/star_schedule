@@ -50,7 +50,7 @@
         <li> <a class="page-scroll" href="#driver">Drivers</a> </li>
         <li> <a class="page-scroll" href="#services">Memories</a> </li>
         <li> <a class="page-scroll" href="#about">About</a> </li>
-        <li> <a class="page-scroll" href="contact.html">Contact</a> </li>
+        <li> <a class="page-scroll" href="contact.php">Contact</a> </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"> <img src="img/profile.png" width="23"></a></li>

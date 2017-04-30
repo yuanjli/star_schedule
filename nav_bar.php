@@ -50,7 +50,7 @@ session_start()
         <li> <a class="page-scroll" href="index.php#driver" target="_top">Drivers</a> </li>
         <li> <a class="page-scroll" href="index.php#services" target="_top">Memories</a> </li>
         <li> <a class="page-scroll" href="index.php#about" target="_top">About</a> </li>
-        <li> <a class="page-scroll" href="contact.html" target="_top">Contact</a> </li>
+        <li> <a class="page-scroll" href="contact.php" target="_top">Contact</a> </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"> <img src="img/profile.png" width="23"></a></li>
