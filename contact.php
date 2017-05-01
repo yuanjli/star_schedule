@@ -36,27 +36,27 @@
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"> <i class="fa fa-bars"></i> </button>
-      <a class="page-scroll" href="index.html"> <img src="img/Logo.png" width="160" class="img-circle"> </a></div>
+      <a class="page-scroll" href="index.php"> <img src="img/Logo.png" width="160" class="img-circle"> </a></div>
     
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-main-collapse">
       <ul class="nav navbar-nav">
         <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
         <li class="hidden"> <a href="#page-top"></a> </li>
-        <li> <a class="page-scroll" href="index.html#vehicle">Vehicles</a> </li>
+        <li> <a class="page-scroll" href="index.php#vehicle">Vehicles</a> </li>
         <li> <a class="page-scroll" href="./Scripts/bookNow.php">Book Now</a> </li>
-        <li> <a class="page-scroll" href="index.html#driver">Drivers</a> </li>
-        <li> <a class="page-scroll" href="index.html#services">Memories</a> </li>
-        <li> <a class="page-scroll" href="index.html#about">About</a> </li>
+        <li> <a class="page-scroll" href="index.php#driver">Drivers</a> </li>
+        <li> <a class="page-scroll" href="index.php#services">Memories</a> </li>
+        <li> <a class="page-scroll" href="index.php#about">About</a> </li>
         <li> <a class="page-scroll" href="contact.php">Contact</a> </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"> <img src="img/profile.png" width="23"></a></li>
         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Account<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="sign_up.html">Sign up</a></li>
+            <li><a href="sign_up.php">Sign up</a></li>
             <?php if(!isset($_SESSION['s_id'])) { ?>
-            <li><a href="log_in.html">Log in</a></li>
+            <li><a href="log_in.php">Log in</a></li>
           <?php } else { ?>
             <li><a href="./Scripts/logout.php">Log Out</a></li>
           <?php } ?>

@@ -56,9 +56,9 @@ session_start()
         <li><a href="#"> <img src="img/profile.png" width="23"></a></li>
         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Account<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="sign_up.html" target="_top">Sign up</a></li>
+            <li><a href="sign_up.php" target="_top">Sign up</a></li>
             <?php if(!isset($_SESSION['s_id'])){ ?> 
-            <li><a href="log_in.html" target="_top">Log in</a></li>
+            <li><a href="log_in.php" target="_top">Log in</a></li>
             <?php }else { ?>
             <li><a href="./Scripts/logout.php" target="_top">Log Out</a></li>
             <?php } ?>
