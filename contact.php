@@ -69,20 +69,19 @@
   <!-- /.container --> 
 </nav>
 
-<!-- Header -->
+<!-- FAQs -->
+<div id="about">
+	<h1> FAQs </h1>
 
-<!-- About Section -->
-
-<!-- Services Section -->
-
-<!-- Portfolio Section -->
+	<iframe src="FAQ.html" width="100%" height="70%" align="middle"></iframe>
+	
+</div>
 
 <!-- Team Section -->
 <div id="about">
   <div class="text-center">
     <div class="container">
       <div class="section-title center">
-        <h2>Search Our Cars</h2>
         <hr>
       </div>
       <div class="col-md-8 col-md-offset-2">
