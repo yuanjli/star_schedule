@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Star Web</title>
+<title>Start Web</title>
 <meta name="description" content="">
 <meta name="author" content="">
 
@@ -30,8 +30,7 @@
   <div id="status"> <img src="img/preloader.gif" height="64" width="64" alt=""> </div>
 </div>
 
-
-
+<!-- Navigation -->
 <!-- Navigation -->
 <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
   <div class="container">
@@ -56,11 +55,11 @@
         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Account<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="sign_up.php">Sign up</a></li>
-            <?php if(!isset($_SESSION['s_id'])){ ?> 
+            <?php if(!isset($_SESSION['s_id'])) { ?>
             <li><a href="log_in.php">Log in</a></li>
-            <?php } else { ?>
+          <?php } else { ?>
             <li><a href="./Scripts/logout.php">Log Out</a></li>
-            <?php } ?>
+          <?php } ?>
           </ul>
         </li>
       </ul>
@@ -70,52 +69,100 @@
   <!-- /.container --> 
 </nav>
 
+<!-- Header -->
 
+<!-- About Section -->
 
-<div id="contact" class="text-center">
-  <div class="container">
-   
-   <div id="login">
-  <div class="container">
-    <div class="section-title text-center center">
-      <h2>Log in</h2>
-      <hr>
-    </div>
-    <div class="row">
-      <div class="center">
-        <form action="./Scripts/login.php" method="post">
-          <ul style="list-style:none;">
-            <li>
-              <label for="email">E-Mail ID</label>
-              
-              <input type="text" id="email" name="email" required>
-            </li>
-            <li>
-              <label for="passwd">Password</label>
-              <br>
-              <input type="password" id="passwd" name="passwd" required>
-            </li>
-            <br><br>
-            <input type="submit" id="submit_button" value="Submit">
-          </ul>
-        </form>
-        <br>
+<!-- Services Section -->
+
+<!-- Portfolio Section -->
+
+<!-- Team Section -->
+<div id="about">
+  <div class="text-center">
+    <div class="container">
+      <div class="section-title center">
+        <h2>Search Our Cars</h2>
+        <hr>
+      </div>
+      <div class="col-md-8 col-md-offset-2">
+        <h3>Let us know</h3>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf7S1cP151lp5T6rdiqcaEYnnJcH-2FVvlw9GkAGWjs-fsMGw/viewform?embedded=true" width="860" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+    
       </div>
     </div>
   </div>
 </div>
-   
+
+<div class="section-title" center align="center" bgcolor=>
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3089.5095735727314!2d-86.53006618502229!3d39.2540032334506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x886c61ad2d0aea8f%3A0x145f47309862fdc0!2sStar+of+America!5e0!3m2!1sen!2sus!4v1493140265177" width=90% height="600" frameborder="0" style="border:0" ></iframe>
+	
+</div>
+
+
+
+<!-- Contact Section -->
+<div id="contact" class="text-center">
+  <div class="container">
+    <div class="section-title center">
+      <h2>Contact us</h2>
+      <hr>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diamcommodo nibh ante facilisis.</p>
+    </div>
     <div class="col-md-8 col-md-offset-2">
- 
+      <div class="col-md-4">
+        <div class="contact-item"> <i class="fa fa-map-marker fa-2x"></i>
+          <p>321 Awesome Street<br>
+            New York, NY 17022</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="contact-item"> <i class="fa fa-envelope-o fa-2x"></i>
+          <p>info@companyname.com</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="contact-item"> <i class="fa fa-phone fa-2x"></i>
+          <p> +1 800 123 1234<br>
+            +1 800 321 4321</p>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+      <h3>Leave us a message</h3>
+               <form action="./Scripts/contact.php" method="post">
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" id="name" name="name" class="form-control" placeholder="Name" required="required">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="email" id="email" name="email" class="form-control" placeholder="Email" required="required">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <textarea name="message" id="message" class="form-control" rows="4" placeholder="Message" required></textarea>
+          <p class="help-block text-danger"></p>
+        </div>
+        <div id="success"></div>
+        <button type="submit" class="btn btn-default">Send Message</button>
+      </form>
       <div class="social">
         <h3>Follow us</h3>
         <ul>
-          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-          <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-          <li><a href="#"><i class="fa fa-github"></i></a></li>
-          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-          <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+          <li><a href="https://www.facebook.com/?stype=lo&jlou=AffpC21eCeiunv9WhW7_i7Dch2-A-CkZy231HvuQVypKniSGU3UlxPUWNDKR2zIOBCza7W69Tk49WUI3KX1h-7uGM_KNaFt-qWab9Di-KO364w&smuh=47016&lh=Ac__SzfxQGrrXL_Q" target="new"><i class="fa fa-facebook">  </i></a></li>
+          <li><a href="https://twitter.com/" target="new"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="https://dribbble.com/" target="new"><i class="fa fa-dribbble"></i></a></li>
+          <li><a href="https://github.com/" target="new"><i class="fa fa-github"></i></a></li>
+          <li><a href="https://www.instagram.com/?hl=en" target="new"><i class="fa fa-instagram"></i></a></li>
+          <li><a href="https://www.linkedin.com/" target="new"><i class="fa fa-linkedin"></i></a></li>
         </ul>
       </div>
     </div>
@@ -125,7 +172,11 @@
 
 <div id="footer">
   <div class="container">
+<<<<<<< HEAD:contact.html
     <p>Copyright &copy; Star Booking. Design by <a href="http://www.templategarden.com" rel="nofollow">Team 3</a></p>
+=======
+    <p>Copyright &copy; Star Booking Design By <a href="http://www.templategarden.com" rel="nofollow">Team 3</a></p>
+>>>>>>> 604c1b795b9c19fd03ab4dd80ed4b09a680389b3:contact.php
   </div>
 </div>
 
@@ -138,6 +189,7 @@
 <script type="text/javascript" src="js/jquery.isotope.js"></script> 
 <script type="text/javascript" src="js/jquery.parallax.js"></script> 
 <script type="text/javascript" src="js/jqBootstrapValidation.js"></script> 
+<script type="text/javascript" src="js/contact_me.js"></script> 
 
 <!-- Javascripts
     ================================================== --> 

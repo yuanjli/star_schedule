@@ -190,11 +190,12 @@ th {
 }
 .col-md-10.col-md-offset-1 h1 .brand-heading {
 	font-size: 0.5em;
-	color: #B5B2D6;
+	color: #1E1675;
 	text-shadow: 5px 5px 15px #66292A;
+	background-color: #FFFFFF;
 }
 .row .col-md-10.col-md-offset-1 .intro-text {
-	color: #DBD4EB;
+	color: #930619;
 	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
 	text-shadow: 5px 5px 10px #5C1C1D;
 }

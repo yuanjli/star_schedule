@@ -140,11 +140,9 @@
 
 <div id="footer">
   <div class="container">
-<<<<<<< HEAD:sign_up.html
-    <p>Copyright &copy; Star Booking. Design by <a href="http://www.templategarden.com" rel="nofollow">Team 3</a></p>
-=======
+
     <p>Copyright &copy; Star Booking Design By <a href="http://www.templategarden.com" rel="nofollow">Team 3</a></p>
->>>>>>> 604c1b795b9c19fd03ab4dd80ed4b09a680389b3:sign_up.php
+
   </div>
 </div>
 

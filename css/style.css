@@ -175,6 +175,9 @@ ul, ol {
 #page-top #signup {
 	padding-top: 80px;
 }
+#footer .col-md-8.col-md-offset-2 .social {
+	display: inline;
+}
 
 @media(min-width:768px) {
 #intro {
@@ -208,6 +211,7 @@ ul, ol {
 .section-title h2, .section-title.center h2 {
 	font-weight: 600;
 	margin-bottom: 30px;
+	color: #880609;
 }
 .section-title.center hr {
 	height: 4px;
@@ -246,7 +250,7 @@ ul, ol {
 #about {
 	
 	padding: 100px 0;
-	background: url(../img/sky_beautiful.jpg);
+	background: url(../img/About-flying-birds.jpg);
 	background-size: cover;
 	background-attachment: fixed;
 	
@@ -263,7 +267,7 @@ ul, ol {
 #about .about-text {
 	margin-left: 10px;
 	margin-top: 90px;
-	color: #13130A;
+	color: #1549E3;
 }
 #about H4 {
 	font-size: 20px;
