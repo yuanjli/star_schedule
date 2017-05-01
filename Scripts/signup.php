@@ -1,3 +1,6 @@
+<body>
+	<iframe src="../nav_bar.php"  width="1700" frameBorder="0"></iframe>
+</body>
 <?php
 $servername = "localhost";
 $username = "root";

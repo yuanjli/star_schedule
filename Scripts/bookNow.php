@@ -15,7 +15,8 @@
   </script>
 </head>
 <body>
-<iframe src="../nav_bar.html"  width="1700" frameBorder="0"></iframe>
+<iframe src="../nav_bar.php"  width="1700" frameBorder="0"></iframe>
+<img src="../img/stock-vector.png" align="right" alt="travel image">
 <form action="" method="post">
   <ul style="list-style:none;">
       

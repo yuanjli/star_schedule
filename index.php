@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php session_start() ?>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -36,7 +36,7 @@
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"> <i class="fa fa-bars"></i> </button>
-      <a class="page-scroll" href="index.html"> <img src="img/Logo.png" width="160" class="img-circle"> </a></div>
+      <a class="page-scroll" href="index.php"> <img src="img/Logo.png" width="160" class="img-circle"> </a></div>
     
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-main-collapse">
@@ -48,17 +48,20 @@
         <li> <a class="page-scroll" href="#vehicle">Vehicles</a> </li>
         <li> <a class="page-scroll" href="./Scripts/bookNow.php">Book Now</a> </li>
         <li> <a class="page-scroll" href="#driver">Drivers</a> </li>
-        <li> <a class="page-scroll" href="#services">Services</a> </li>
+        <li> <a class="page-scroll" href="#services">Memories</a> </li>
         <li> <a class="page-scroll" href="#about">About</a> </li>
-        <li> <a class="page-scroll" href="contact.html">Contact</a> </li>
+        <li> <a class="page-scroll" href="contact.php">Contact</a> </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"> <img src="img/profile.png" width="23"></a></li>
         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Account<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="sign_up.html">Sign up</a></li>
-            <li><a href="log_in.html">Log in</a></li>
+            <li><a href="sign_up.php">Sign up</a></li>
+            <?php if(!isset($_SESSION['s_id'])) { ?>
+            <li><a href="log_in.php">Log in</a></li>
+          <?php } else { ?>
             <li><a href="./Scripts/logout.php">Log Out</a></li>
+          <?php } ?>
           </ul>
         </li>
       </ul>
@@ -189,7 +192,7 @@
       </div>
     </div>
     <div>
-      <button type="button" class="btn btn-primary">Search and Booking</button>
+      <button type="button" class="btn btn-primary"><a href="Scripts/bookNow.php">Search and Booking</a></button>
     </div>
   </div>
 </div>
@@ -208,7 +211,7 @@
           <div class="caption">
             <h3>Jessica Wally</h3>
             <p>Rating: 3.5</p>
-            <p>Experiance: 15 yrs </p>
+            <p>Experience: 15 yrs </p>
           </div>
         </div>
       </div>
@@ -217,7 +220,7 @@
           <div class="caption">
             <h3>Mike Sloan</h3>
             <p>Rating: 4.6</p>
-            <p>Experiance: 7 yrs</p>
+            <p>Experience: 7 yrs</p>
           </div>
         </div>
       </div>
@@ -226,7 +229,7 @@
           <div class="caption">
             <h3>Michele Doe</h3>
             <p>Rating: 4.1</p>
-            <p>Experiance: 10 yrs</p>
+            <p>Experience: 10 yrs</p>
           </div>
         </div>
       </div>
@@ -235,7 +238,7 @@
           <div class="caption">
             <h3>Linda Evans</h3>
             <p>Rating: 3.4</p>
-            <p>Experiance: 11 yrs</p>
+            <p>Experience: 11 yrs</p>
           </div>
         </div>
       </div>
@@ -244,7 +247,7 @@
           <div class="caption">
             <h3>Mario Puzo</h3>
             <p>Rating: 4.8</p>
-            <p>Experiance: 12 yrs </p>
+            <p>Experience: 12 yrs </p>
           </div>
         </div>
       </div>
@@ -254,7 +257,7 @@
         <div class="caption">
           <h3>John Smith</h3>
           <p>Rating: 3</p>
-          <p>Experiance: 6 yrs</p>
+          <p>Experience: 6 yrs</p>
         </div>
       </div>
     </div>
@@ -263,7 +266,7 @@
         <div class="caption">
           <h3>Michael Crichton</h3>
           <p>Rating: 4.3</p>
-          <p>Experiance: 20 yrs</p>
+          <p>Experience: 20 yrs</p>
         </div>
       </div>
     </div>
@@ -272,7 +275,7 @@
         <div class="caption">
           <h3>Tom Hiddleston</h3>
           <p>Rating: 3.5</p>
-          <p>Experiance: 3 yrs</p>
+          <p>Experience: 3 yrs</p>
         </div>
       </div>
     </div>
@@ -281,7 +284,7 @@
         <div class="caption">
           <h3>Marilyn Monroe</h3>
           <p>Rating: 2.9</p>
-          <p>Experiance: 1 yr</p>
+          <p>Experience: 1 yr</p>
         </div>
       </div>
     </div>
@@ -289,8 +292,13 @@
       <div class="thumbnail"> <img src="img/drivers/10.jpg" alt="..." class="img-thumbnail team-img">
         <div class="caption">
           <h3>Kelly Mathews</h3>
+<<<<<<< HEAD:index.html
           <p>Rating: 4</p>
           <p>Experiance: 4 yrs</p>
+=======
+          <p>Rating: 4</p> 
+          <p>Experience: 4 yrs</p>
+>>>>>>> 604c1b795b9c19fd03ab4dd80ed4b09a680389b3:index.php
         </div>
       </div>
     </div>
@@ -298,8 +306,13 @@
       <div class="thumbnail"> <img src="img/drivers/11.jpg" alt="..." class="img-thumbnail team-img">
         <div class="caption">
           <h3>Leo Mathew</h3>
+<<<<<<< HEAD:index.html
           <p>Rating: 2</p>
           <p>Experiance: 1 yr </p>
+=======
+          <p>Rating: 2</p>          
+          <p>Experience: 1 yr </p>
+>>>>>>> 604c1b795b9c19fd03ab4dd80ed4b09a680389b3:index.php
         </div>
       </div>
     </div>
@@ -307,15 +320,20 @@
       <div class="thumbnail"> <img src="img/drivers/12.jpg" alt="..." class="img-thumbnail team-img">
         <div class="caption">
           <h3>John Deree</h3>
+<<<<<<< HEAD:index.html
           <p>Rating: 3</p>
           <p>Experiance: 1 yr</p>
+=======
+          <p>Rating: 3</p>          
+          <p>Experience: 1 yr</p>
+>>>>>>> 604c1b795b9c19fd03ab4dd80ed4b09a680389b3:index.php
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Services Section -->
+<!-- Memories Section -->
 <div id="services" class="text-center">
   <div class="container">
     <div class="section-title center">
@@ -325,6 +343,7 @@
     <div class="space"></div>
     <div class="row">
       <div class="col-md-3 col-sm-6">
+<<<<<<< HEAD:index.html
         <div class="service"> <i class="fa fa-cogs"></i> <img src="img/420-Coach-travel-passengers-420x0.jpg" style="width: 200px;height: 150px"> </div>
       </div>
       <div class="col-md-3 col-sm-6">
@@ -335,11 +354,31 @@
       </div>
       <div class="col-md-3 col-sm-6">
         <div class="service"><i class="fa fa-briefcase"></i> <img src="img/busbud-coachbus1.jpg" style="width: 200px;height: 150px"> </div>
+=======
+        <div class="service"> <i class="fa fa-cogs"></i>
+          
+			<img src="img/420-Coach-travel-passengers-420x0.jpg" style="width: 200px;height: 150px">
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="service"> <i class="fa fa-send-o"></i>
+<img src="img/baz-bus-day-tour.jpg" style="width: 200px; align-content: center" >      </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="service"> <i class="fa fa-puzzle-piece"></i>
+<img src="img/groupbus.jpg" style="width: 200px; height: 150px">        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="service"><i class="fa fa-briefcase"></i>
+<img src="img/busbud-coachbus1.jpg" style="width: 200px;height: 150px">
+            </div>
+>>>>>>> 604c1b795b9c19fd03ab4dd80ed4b09a680389b3:index.php
       </div>
     </div>
     <div class="space"></div>
     <div class="row">
       <div class="col-md-3 col-sm-6">
+<<<<<<< HEAD:index.html
         <div class="service"><i class="fa fa-trophy"></i> <img src="img/MooseOnBus-363x240.png" style="width: 200px;height: 150px"> </div>
       </div>
       <div class="col-md-3 col-sm-6">
@@ -350,6 +389,22 @@
       </div>
       <div class="col-md-3 col-sm-6">
         <div class="service"><i class="fa fa-heart"></i> <img src="img/images.jpeg" style="width: 200px;height: 150px"> </div>
+=======
+        <div class="service"><i class="fa fa-trophy"></i>
+<img src="img/MooseOnBus-363x240.png" style="width: 200px;height: 150px">       </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="service"><i class="fa fa-diamond"></i>
+<img src="img/world-cup-bus-2.jpg" style="width: 200px;height: 150px">      </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="service"><i class="fa fa-bullhorn"></i>
+<img src="img/m_1285411g.jpg" style="width: 200px;height: 150px">       </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="service"><i class="fa fa-heart"></i>
+<img src="img/images.jpeg" style="width: 200px;height: 150px">       </div>
+>>>>>>> 604c1b795b9c19fd03ab4dd80ed4b09a680389b3:index.php
       </div>
     </div>
   </div>
@@ -400,10 +455,14 @@
         <div class="row testimonials">
           <div class="col-sm-4">
             <blockquote><i class="fa fa-quote-left"></i>
+<<<<<<< HEAD:index.html
               <p>Dear Star of America,
                 We just wanted to Thank You for providing the busses for our October semi-fromal. We had a great time and we owe a huge part of it to you. Your drivers were excellent and we look forward to working with you again.<br>
               </p>
               <br>
+=======
+              <p>Your communication, patience and excellent organization were greatly appreciated. We appreciate your driver’s patience in packing a lot into a short time while we were in town.</p>
+>>>>>>> 604c1b795b9c19fd03ab4dd80ed4b09a680389b3:index.php
               <div class="clients-name">
                 <p>John Doe, ABC company</p>
               </div>
@@ -411,19 +470,34 @@
           </div>
           <div class="col-sm-4">
             <blockquote><i class="fa fa-quote-left"></i>
+<<<<<<< HEAD:index.html
               <p>Star of America,
                 Thank you so very much for asking me to join the FAM tour to Pigeon Forge. As a "Rookie"S in the tour business I truly learned so much both from the many hosts and especially the others on the bus. It’s been great working with Star of America this past few months and have plans for my 2009 trips.</p>
               <br>
               <div class="clients-name">
                 <p>Jane Doe, XYZ Company</p>
+=======
+<p>Dear Star of America,
+We just wanted to Thank You for providing the busses for our October semi-fromal. We had a great time and we owe a huge part of it to you. Your drivers were excellent and we look forward to working with you again.<br> </p><br>
+                            <div class="clients-name">
+                <p>Jane Doe, ABC Company</p>
+>>>>>>> 604c1b795b9c19fd03ab4dd80ed4b09a680389b3:index.php
               </div>
               <img src="img/testimonials/02.jpg" alt="..."> </blockquote>
           </div>
           <div class="col-sm-4">
             <blockquote><i class="fa fa-quote-left"></i>
+<<<<<<< HEAD:index.html
               <p>Your communication, patience and excellent organization were greatly appreciated. We appreciate your driver’s patience in packing a lot into a short time while we were in town.</p>
               <div class="clients-name">
                 <p>Brian Smith, QWERTY Company</p>
+=======
+              <p>Star of America,
+Thank you so very much for asking me to join the FAM tour to Pigeon Forge. As a "Rookie"S in the tour business I truly learned so much both from the many hosts and especially the others on the bus. It’s been great working with Star of America this past few months and have plans for my 2009 trips.</p><br>
+             
+              <div class="clients-name">
+                <p>Brian Smith, XYZCompany</p>
+>>>>>>> 604c1b795b9c19fd03ab4dd80ed4b09a680389b3:index.php
               </div>
               <img src="img/testimonials/03.jpg" alt="..."> </blockquote>
           </div>
@@ -438,7 +512,11 @@
 
 <div id="footer">
   <div class="container">
+<<<<<<< HEAD:index.html
     <p>Copyright &copy; Star Booking. Design by <a href="http://www.templategarden.com" rel="nofollow">Team 3</a></p>
+=======
+    <p>Copyright &copy; Star Booking Design By <a href="http://www.templategarden.com" rel="nofollow">Team 3</a></p>
+>>>>>>> 604c1b795b9c19fd03ab4dd80ed4b09a680389b3:index.php
   </div>
 </div>
 

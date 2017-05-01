@@ -1,5 +1,5 @@
 <body>
-<iframe src="../nav_bar.html"  width="1700" frameBorder="0"></iframe>
+<iframe src="../nav_bar.php"  width="1700" frameBorder="0"></iframe>
 </body>
 <?php
 session_start();
@@ -52,14 +52,20 @@ if(isset($_SESSION['s_id'])) {
     $total_amnt = $driver_cost + $vehicle_cost;
 
     echo("The Total Amount Payable is ".$total_amnt)."<br>"."<br>";
+    $_SESSION['driver_cost'] = $driver_cost;
+    $_SESSION['vehicle_cost'] = $vehicle_cost;
+    $_SESSION['total_amnt'] = $total_amnt;
     
     //make payment, if payment successful, enter the values to mysql
   }
 
 else {
 	echo ("You need to be logged in, to make transactions");
-//	header("location:../html/login.html");
+	header("location:../log_in.php");
 }
 
 mysqli_close($conn);
 ?>
+<body>
+<button><a href="../transaction.php" style="text-decoration:none;">Pay Now</a></button>
+</body>

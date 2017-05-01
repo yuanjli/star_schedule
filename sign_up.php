@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php session_start()?>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -25,42 +25,42 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
+
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 <div id="preloader">
   <div id="status"> <img src="img/preloader.gif" height="64" width="64" alt=""> </div>
 </div>
 
-
-
+<!-- Navigation -->
 <!-- Navigation -->
 <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"> <i class="fa fa-bars"></i> </button>
-      <a class="page-scroll" href="index.html"> <img src="img/Logo.png" width="160" class="img-circle"> </a></div>
+      <a class="page-scroll" href="index.php"> <img src="img/Logo.png" width="160" class="img-circle"> </a></div>
     
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-main-collapse">
       <ul class="nav navbar-nav">
         <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
         <li class="hidden"> <a href="#page-top"></a> </li>
-        <li> <a class="page-scroll" href="index.html#vehicle">Vehicles</a> </li>
+        <li> <a class="page-scroll" href="index.php#vehicle">Vehicles</a> </li>
         <li> <a class="page-scroll" href="./Scripts/bookNow.php">Book Now</a> </li>
-        <li> <a class="page-scroll" href="index.html#driver">Drivers</a> </li>
-        <li> <a class="page-scroll" href="index.html#services">Services</a> </li>
-        <li> <a class="page-scroll" href="index.html#about">About</a> </li>
-        <li> <a class="page-scroll" href="contact.html">Contact</a> </li>
+        <li> <a class="page-scroll" href="index.php#driver">Drivers</a> </li>
+        <li> <a class="page-scroll" href="index.php#services">Memories</a> </li>
+        <li> <a class="page-scroll" href="index.php#about">About</a> </li>
+        <li> <a class="page-scroll" href="contact.php">Contact</a> </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"> <img src="img/profile.png" width="23"></a></li>
         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Account<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="sign_up.html">Sign up</a></li>
-            <li><a href="log_in.html">Log in</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="sign_up.php">Sign up</a></li>
+            <?php if(!isset($_SESSION['s_id'])){ ?> 
+            <li><a href="log_in.php">Log in</a></li>
+            <?php } else { ?>
+            <li><a href="./Scripts/logout.php">Log Out</a></li>
+            <?php } ?>
           </ul>
         </li>
       </ul>
@@ -70,30 +70,64 @@
   <!-- /.container --> 
 </nav>
 
-<div id="contact" class="text-center">
+
+<!-- Sign up Section -->
+
+<!-- Services Section -->
+<div id="services" class="text-center">
   <div class="container">
-   
-   <div id="login">
+    
+    
+    <div id="signup">
   <div class="container">
     <div class="section-title text-center center">
-      <h2>Log in</h2>
+      <h2>Sign up</h2>
       <hr>
     </div>
     <div class="row">
       <div class="center">
-        <form action="./Scripts/login.php" method="post">
+        <form action="./Scripts/signup.php" method="post">
           <ul style="list-style:none;">
             <li>
-              <label for="email">E-Mail ID</label>
-              
+              <label for="fname">First Name</label>
+              <br>
+              <input type="text" id="fname" name="fname" required>
+            </li>
+            <li>
+              <label for="lname">Last Name</label>
+              <br>
+              <input type="text" id="lname" name="lname" required>
+            </li>
+            <li>
+              <label for="email" >E-mail</label>
+              <br>
               <input type="text" id="email" name="email" required>
             </li>
             <li>
-              <label for="passwd">Password</label>
+              <label for="passwd" >Password</label>
               <br>
               <input type="password" id="passwd" name="passwd" required>
             </li>
-            <br><br>
+            <li>
+              <label for="street" >Street</label>
+              <br>
+              <input type="text" id="street" name="street" required>
+            </li>
+            <li>
+              <label for="city" >City</label>
+              <br>
+              <input type="text" id="city" name="city" required>
+            </li>
+            <li>
+              <label for="zip" >Zip</label>
+              <br>
+              <input type="text" id="zip" name="zip" required>
+            </li>
+            <li>
+              <label for="phno" >Phone Number</label>
+              <br>
+              <input type="text" id="phno" name="phno" required>
+            </li>
             <input type="submit" id="submit_button" value="Submit">
           </ul>
         </form>
@@ -102,26 +136,15 @@
     </div>
   </div>
 </div>
-   
-    <div class="col-md-8 col-md-offset-2">
- 
-      <div class="social">
-        <h3>Follow us</h3>
-        <ul>
-          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-          <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-          <li><a href="#"><i class="fa fa-github"></i></a></li>
-          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-          <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+
+
 <div id="footer">
   <div class="container">
+<<<<<<< HEAD:sign_up.html
     <p>Copyright &copy; Star Booking. Design by <a href="http://www.templategarden.com" rel="nofollow">Team 3</a></p>
+=======
+    <p>Copyright &copy; Star Booking Design By <a href="http://www.templategarden.com" rel="nofollow">Team 3</a></p>
+>>>>>>> 604c1b795b9c19fd03ab4dd80ed4b09a680389b3:sign_up.php
   </div>
 </div>
 
@@ -134,6 +157,7 @@
 <script type="text/javascript" src="js/jquery.isotope.js"></script> 
 <script type="text/javascript" src="js/jquery.parallax.js"></script> 
 <script type="text/javascript" src="js/jqBootstrapValidation.js"></script> 
+
 
 <!-- Javascripts
     ================================================== --> 

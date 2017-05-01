@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php session_start() ?>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -36,27 +36,30 @@
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"> <i class="fa fa-bars"></i> </button>
-      <a class="page-scroll" href="index.html"> <img src="img/Logo.png" width="160" class="img-circle"> </a></div>
+      <a class="page-scroll" href="index.php"> <img src="img/Logo.png" width="160" class="img-circle"> </a></div>
     
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-main-collapse">
       <ul class="nav navbar-nav">
         <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
         <li class="hidden"> <a href="#page-top"></a> </li>
-        <li> <a class="page-scroll" href="index.html#vehicle">Vehicles</a> </li>
+        <li> <a class="page-scroll" href="index.php#vehicle">Vehicles</a> </li>
         <li> <a class="page-scroll" href="./Scripts/bookNow.php">Book Now</a> </li>
-        <li> <a class="page-scroll" href="index.html#driver">Drivers</a> </li>
-        <li> <a class="page-scroll" href="index.html#services">Services</a> </li>
-        <li> <a class="page-scroll" href="index.html#about">About</a> </li>
-        <li> <a class="page-scroll" href="contact.html">Contact</a> </li>
+        <li> <a class="page-scroll" href="index.php#driver">Drivers</a> </li>
+        <li> <a class="page-scroll" href="index.php#services">Memories</a> </li>
+        <li> <a class="page-scroll" href="index.php#about">About</a> </li>
+        <li> <a class="page-scroll" href="contact.php">Contact</a> </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"> <img src="img/profile.png" width="23"></a></li>
         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Account<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="sign_up.html">Sign up</a></li>
-            <li><a href="log_in.html">Log in</a></li>
+            <li><a href="sign_up.php">Sign up</a></li>
+            <?php if(!isset($_SESSION['s_id'])) { ?>
+            <li><a href="log_in.php">Log in</a></li>
+          <?php } else { ?>
             <li><a href="./Scripts/logout.php">Log Out</a></li>
+          <?php } ?>
           </ul>
         </li>
       </ul>
@@ -91,7 +94,10 @@
   </div>
 </div>
 
-
+<div class="section-title" center align="center" bgcolor=>
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3089.5095735727314!2d-86.53006618502229!3d39.2540032334506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x886c61ad2d0aea8f%3A0x145f47309862fdc0!2sStar+of+America!5e0!3m2!1sen!2sus!4v1493140265177" width=90% height="600" frameborder="0" style="border:0" ></iframe>
+	
+</div>
 
 
 
@@ -125,17 +131,18 @@
     </div>
     <div class="col-md-8 col-md-offset-2">
       <h3>Leave us a message</h3>
-      <form name="sentMessage" id="contactForm" novalidate>
+               <form action="./Scripts/contact.php" method="post">
+
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <input type="text" id="name" class="form-control" placeholder="Name" required="required">
+              <input type="text" id="name" name="name" class="form-control" placeholder="Name" required="required">
               <p class="help-block text-danger"></p>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
-              <input type="email" id="email" class="form-control" placeholder="Email" required="required">
+              <input type="email" id="email" name="email" class="form-control" placeholder="Email" required="required">
               <p class="help-block text-danger"></p>
             </div>
           </div>
@@ -162,9 +169,10 @@
   </div>
 </div>
 
+
 <div id="footer">
   <div class="container">
-    <p>Copyright &copy; Star Booking. Design by <a href="http://www.templategarden.com" rel="nofollow">Team 3</a></p>
+    <p>Copyright &copy; Star Booking Design By <a href="http://www.templategarden.com" rel="nofollow">Team 3</a></p>
   </div>
 </div>
 
