@@ -13,7 +13,7 @@ session_start();
 unset($_SESSION['s_id']);
 session_destroy();
 echo "You have been logged out";
-//header("location:../index.php");
+header("location:../index.php");
 ?>
 
 
