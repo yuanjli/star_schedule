@@ -68,6 +68,7 @@
 							<?php } else { ?>
 							<li><a href="./Scripts/logout.php">Log Out</a>
 							</li>
+							<li><a href="delete.html">Delete</a></li>
 							<?php } ?>
 						</ul>
 					</li>
