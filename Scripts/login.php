@@ -59,8 +59,14 @@ if (!$error) {
     }
    }  
 
-   else {echo "Invalid login Credentials";}
-  
+   else 
+{
+$message = "Wrong credentials";
+echo "<script type='text/javascript'>alert('$message');</script>";
+    header("location:../login.php");
+
+
+}
    }
 
  mysqli_close($conn);
