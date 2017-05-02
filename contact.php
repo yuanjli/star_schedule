@@ -106,7 +106,7 @@
     <div class="section-title center">
       <h2>Contact us</h2>
       <hr>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diamcommodo nibh ante facilisis.</p>
+      
     </div>
     <div class="col-md-8 col-md-offset-2">
       <div class="col-md-4">
@@ -128,8 +128,7 @@
       </div>
       <div class="clearfix"></div>
     </div>
-    <div class="col-md-8 col-md-offset-2">
-      <h3>Leave us a message</h3>
+      <!--<h3>Leave us a message</h3>
                <form action="./Scripts/contact.php" method="post">
 
         <div class="row">
@@ -152,7 +151,14 @@
         </div>
         <div id="success"></div>
         <button type="submit" class="btn btn-default">Send Message</button>
-      </form>
+      </form>-->
+      
+      
+      <div >
+      <iframe src="temp.html" width="100%" height="10%"></iframe>
+      </div>
+          <div class="col-md-8 col-md-offset-2">
+
       <div class="social">
         <h3>Follow us</h3>
         <ul>
